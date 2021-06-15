@@ -4,10 +4,10 @@ one:
   title: MyString
   description: MyString
   score: 1
-  airline: one
+  house: one
 
 two:
   title: MyString
   description: MyString
   score: 1
-  airline: two
+  house: two
