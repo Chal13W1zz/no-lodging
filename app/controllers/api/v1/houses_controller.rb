@@ -38,6 +38,17 @@ module Api
               end
 
 
+              def destroy
+                house = House.find_by(slug: params[:slug])
+
+                if house.destroy
+                    head :no_content
+                else
+                    render json: { errors: airline.errors.messages }, status: 422
+                end
+              end
+
+
               private
               def house_params
                   params.require(:house).permit(:name, :image_url)
