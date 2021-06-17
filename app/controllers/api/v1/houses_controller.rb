@@ -53,6 +53,11 @@ module Api
               def house_params
                   params.require(:house).permit(:name, :image_url)
               end
+
+              private 
+              def options
+                @options ||= { include: %i[reviews] }
+              end
         end
     end
 end
