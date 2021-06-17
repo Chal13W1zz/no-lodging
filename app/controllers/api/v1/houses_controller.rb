@@ -5,14 +5,14 @@ module Api
             def index
                 houses = House.all
 
-                render json: HouseSerializer.new(houses).serialized_json
+                render json: HouseSerializer.new(houses, options).serialized_json
             end
 
 
             def show
                 house = House.find_by(slug: params[:slug])
 
-                render json: HouseSerializer.new(house).serialized_json
+                render json: HouseSerializer.new(house, options).serialized_json
             end
 
 
@@ -31,7 +31,7 @@ module Api
                 house = House.find_by(slug: params[:slug])
         
                 if house.update(house_params)
-                  render json: HouseSerializer.new(house).serialized_json
+                  render json: HouseSerializer.new(house, options).serialized_json
                 else
                   render json: { error: airline.errors.messages }, status: 422
                 end
