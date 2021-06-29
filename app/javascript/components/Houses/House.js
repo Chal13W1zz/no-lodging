@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import styled from 'styled-components'
+import ReviewForm from '../House/ReviewForm'
 
 const Card = styled.div`
     border: 1px solid #efefef;
